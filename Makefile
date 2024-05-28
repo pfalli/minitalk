@@ -10,29 +10,29 @@ LIBFT_PATH = ./libft_full
 SERVER_SRC		= server.c
 CLIENT_SRC		= client.c
 
-SERVER_O		= $(SERVER_SRC:.c=.o)
-CLIENT_O		= $(CLIENT_SRC:.c=.o)
+SERVER_OBJ		= $(SERVER_SRC:.c=.o)
+CLIENT_OBJ		= $(CLIENT_SRC:.c=.o)
 
-SERVER_NAME = server
-CLIENT_NAME = client
+SERVER = server
+CLIENT = client
 
 all: libft $(SERVER) $(CLIENT)
 
 libft:
 	@$(MAKE) -C $(LIBFT_PATH)
 
-$(SERVER_NAME): $(SERVER_O) $(OBJS)
-	$(CC) $(CFLAGS) -o $(SERVER-NAME) $(SERVER_O) $(OBJS) $(LIBFT)
+$(SERVER): $(SERVER_OBJ) $(OBJS)
+	$(CC) $(CFLAGS) -o $(SERVER) $(SERVER_OBJ) $(OBJS) $(LIBFT)
 
-$(CLIENT_NAME): $(CLIENT_OBJ) $(OBJS)
-	$(CC) $(CFLAGS) -o $(CLIENT_NAME) $(CLIENT_O) $(OBJS) $(LIBFT)
+$(CLIENT): $(CLIENT_OBJ) $(OBJS)
+	$(CC) $(CFLAGS) -o $(CLIENT) $(CLIENT_OBJ) $(OBJS) $(LIBFT)
 
 clean:
-	$(RM) $(SERVER_O) $(CLIENT_O) $(OBJS)
+	$(RM) $(SERVER_OBJ) $(CLIENT_OBJ) $(OBJS)
 	@$(MAKE) -C $(LIBFT_PATH) clean
 
 fclean: clean
-		$(RM) $(SERVER_O) $(CLIENT_O)
+		$(RM) $(SERVER_OBJ) $(CLIENT_OBJ)
 		@$(MAKE) -C $(LIBFT_PATH) fclean
 
 re: fclean all
