@@ -42,8 +42,9 @@ static void		signal_reception(void)
 
 int		main(void)
 {
-	ft_printf("Welcome to baguiar-'s server\n");
+	ft_printf("Welcome to pfalli server\n");
 	ft_printf("Server's PID: %d\n", getpid());
+	ft_printf("PRINT AREA ---------");
 	while (1)
 		signal_reception();
 	return (0);
