@@ -12,6 +12,18 @@
 
 #include "minitalk.h"
 
+void	print_intro(void)
+{
+	ft_printf("\n\033[1;33m");
+	ft_printf("███████╗███████╗██████╗ ██╗   ██╗███████╗██████╗ \n");
+	ft_printf("██╔════╝██╔════╝██╔══██╗██║   ██║██╔════╝██╔══██╗\n");
+	ft_printf("███████╗█████╗  ██████╔╝██║   ██║█████╗  ██████╔╝\n");
+	ft_printf("╚════██║██╔══╝  ██╔══██╗╚██╗ ██╔╝██╔══╝  ██╔══██╗\n");
+	ft_printf("███████║███████╗██║  ██║ ╚████╔╝ ███████╗██║  ██║\n");
+	ft_printf("╚══════╝╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝\n");
+	ft_printf("            Created By: pfalli\n\n>> \033[1;0m");
+}
+
 // print newline --  when ch is equal to 4, the function will print a newline character before 
 // resetting ch and bit. This means that when the client sends the End of Transmission character, the server will print a newline.
 static void		signal_handler(int signum)
@@ -45,6 +57,7 @@ static void		signal_reception(void)
 
 int		main(void)
 {
+	print_intro();
 	ft_printf("Welcome to pfalli server\n");
 	ft_printf("Server's PID: %d\n", getpid());
 	ft_printf("PRINT AREA ---------\n");
