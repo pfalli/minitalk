@@ -14,7 +14,7 @@
 
 static void		exit_err(void)
 {
-	ft_printf("\nError\n\n");
+	ft_printf(RED "\nError\n\n" RESET);
 	exit(1);
 }
 
@@ -27,7 +27,7 @@ static void		validate_pid(char *pid)
 	{
 		if (!ft_isdigit(pid[i]))
 		{
-			ft_printf("\nInvalid PID.\n\nOnly digits are accepted!\n\n");
+			ft_printf(RED "\nInvalid PID\n\nOnly digits are accepted!\n\n");
 			exit(1);
 		}
 		i++;
@@ -65,15 +65,15 @@ int		main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		ft_printf("\nError on amount of arguments!\n\n");
-		ft_printf("Usage: ./client <PID> <MESSAGE>\n");
+		ft_printf(RED "\nError on amount of arguments!\n\n" RESET);
+		ft_printf("How to write ==> ./client <PID> <MESSAGE>\n");
 		return (1);
 	}
 	i = 0;
 	pid = ft_atoi(argv[1]);
 	if (pid <= 0)
 	{
-		ft_printf("\nInvalid PID! Use only positive numbers!\n");
+		ft_printf(RED "\nInvalid PID! Use only positive numbers!\n" RESET);
 		return (1);
 	}
 	validate_pid(argv[1]);

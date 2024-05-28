@@ -14,14 +14,14 @@
 
 void	print_intro(void)
 {
-	ft_printf("\n\033[1;33m");
+	ft_printf(YELLOW);
 	ft_printf("███████╗███████╗██████╗ ██╗   ██╗███████╗██████╗ \n");
 	ft_printf("██╔════╝██╔════╝██╔══██╗██║   ██║██╔════╝██╔══██╗\n");
 	ft_printf("███████╗█████╗  ██████╔╝██║   ██║█████╗  ██████╔╝\n");
 	ft_printf("╚════██║██╔══╝  ██╔══██╗╚██╗ ██╔╝██╔══╝  ██╔══██╗\n");
 	ft_printf("███████║███████╗██║  ██║ ╚████╔╝ ███████╗██║  ██║\n");
 	ft_printf("╚══════╝╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝\n");
-	ft_printf("            Created By: pfalli\n\n>> \033[1;0m");
+	ft_printf("            Created By: pfalli\n\n>> " RESET);
 }
 
 // print newline --  when ch is equal to 4, the function will print a newline character before 
@@ -58,9 +58,7 @@ static void		signal_reception(void)
 int		main(void)
 {
 	print_intro();
-	ft_printf("Welcome to pfalli server\n");
-	ft_printf("Server's PID: %d\n", getpid());
-	ft_printf("PRINT AREA ---------\n");
+	ft_printf("Server's PID: %d\n\n", getpid());
 	while (1)
 		signal_reception();
 	return (0);

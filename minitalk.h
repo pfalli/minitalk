@@ -13,6 +13,10 @@
 #ifndef MINITALK_H
 # define MINITALK_H
 
+# define RED "\033[31m"
+# define RESET "\033[0m"
+# define YELLOW "\033[1;33m"
+
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
