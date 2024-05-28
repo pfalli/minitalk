@@ -12,6 +12,8 @@
 
 #include "minitalk.h"
 
+// print newline --  when ch is equal to 4, the function will print a newline character before 
+// resetting ch and bit. This means that when the client sends the End of Transmission character, the server will print a newline.
 static void		signal_handler(int signum)
 {
 	static unsigned char	ch;
@@ -24,11 +26,12 @@ static void		signal_handler(int signum)
 	{
 		if (ch == 4)
 		{
+			ft_printf("\n"); 
 			ch = 0;
 			bit = 0;
 			return ;
 		}
-		write(1, &ch, 1);
+		ft_printf("%c", ch);
 		ch = 0;
 		bit = 0;
 	}
@@ -44,7 +47,7 @@ int		main(void)
 {
 	ft_printf("Welcome to pfalli server\n");
 	ft_printf("Server's PID: %d\n", getpid());
-	ft_printf("PRINT AREA ---------");
+	ft_printf("PRINT AREA ---------\n");
 	while (1)
 		signal_reception();
 	return (0);

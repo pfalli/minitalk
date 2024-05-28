@@ -66,7 +66,7 @@ int		main(int argc, char **argv)
 	if (argc != 3)
 	{
 		ft_printf("\nError on amount of arguments!\n\n");
-		ft_printf("Usage: ./client <PID> <MESSAGE>");
+		ft_printf("Usage: ./client <PID> <MESSAGE>\n");
 		return (1);
 	}
 	i = 0;

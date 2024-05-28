@@ -33,6 +33,7 @@ clean:
 
 fclean: clean
 		$(RM) $(SERVER_OBJ) $(CLIENT_OBJ)
+		$(RM) $(SERVER) $(CLIENT)
 		@$(MAKE) -C $(LIBFT_PATH) fclean
 
 re: fclean all
