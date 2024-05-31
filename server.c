@@ -26,6 +26,7 @@ void	print_intro(void)
 
 // print newline --  when ch is equal to 4, the function will print a newline character before 
 // resetting ch and bit. This means that when the client sends the End of Transmission character, the server will print a newline.
+
 static void		signal_handler(int signum)
 {
 	static unsigned char	ch;
